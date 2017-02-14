@@ -51,7 +51,8 @@
 
 
 - name: sudo chmod 777 ~/navcoin2/src/secp256k1/* 
-  shell: sudo chmod 777 ~/navcoin2/src/secp256k1/*
+  shell: chmod 777 ~/navcoin2/src/secp256k1/*
+  sudo: yes
   ignore_errors: no
 
 - name: ./autogen.sh
