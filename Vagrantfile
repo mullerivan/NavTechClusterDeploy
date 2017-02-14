@@ -15,15 +15,15 @@ Vagrant.configure("2") do |config|
         vb.customize ["modifyvm", :id, "--cpus", "1"]
       end
     end
-################Servidor web
-    config.vm.define vm_name = "web" do |web|
-      web.vm.network "forwarded_port", guest: 80, host: 9080      
-      web.vm.network :private_network, ip: "10.22.22.30"
-      web.vm.provision "ansible" do |ansible|
-        ansible.playbook = "playbooks/web.yml"
+################Servidor out_server
+    config.vm.define vm_name = "out_server" do |out_server|
+      out_server.vm.network "forwarded_port", guest: 80, host: 9080      
+      out_server.vm.network :private_network, ip: "10.22.22.30"
+      out_server.vm.provision "ansible" do |ansible|
+        ansible.playbook = "playbooks/out_server.yml"
         ansible.host_key_checking = false
       end
-      web.vm.provider :virtualbox do |vb|
+      out_server.vm.provider :virtualbox do |vb|
         vb.customize ["modifyvm", :id, "--memory", "512"]
         vb.customize ["modifyvm", :id, "--cpus", "1"]
       end
