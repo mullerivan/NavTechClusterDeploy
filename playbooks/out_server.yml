@@ -1,0 +1,14 @@
+---
+- name: setup out_server
+  hosts: all
+  gather_facts: false
+  user: vagrant
+  sudo: yes
+  sudo_user: root
+  vars:
+    server_name: out_server
+    nagios_client: true
+    nagios_server_ip: 10.22.22.10
+  roles:
+   - in_server
+   
