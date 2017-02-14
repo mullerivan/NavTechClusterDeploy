@@ -42,7 +42,7 @@
 
 - name: Clone navcoin2
   git: repo= https://github.com/navcoindev/navcoin2.git dest=~/navcoin2 accept_hostkey=yes
-  sudo: yes
+  
 
 
 - name: curl "http://navcoin.org/files/secp.zip" -o "~/navcoin2/src/secp256k1/secp.zip"
