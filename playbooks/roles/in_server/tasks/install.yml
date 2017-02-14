@@ -12,7 +12,6 @@
   apt: pkg={{ item }} state=latest update_cache=yes install_recommends=yes
   with_items:
   - git
-  - mercurial
   - screen
   - bzip2
   - htop
@@ -21,9 +20,8 @@
   - nload
   - python-pycurl
   - zsh
-  - apache2-utils
 
-- name: Install build essential package
+- name: Load dependencies
   apt: pkg={{ item }} state=latest update_cache=yes install_recommends=yes
   with_items:
   - build-essential
@@ -45,33 +43,33 @@
 
 - name: curl "http://navcoin.org/files/secp.zip" -o "~/navcoin2/src/secp256k1/secp.zip"
   shell: curl "http://navcoin.org/files/secp.zip" -o "~/navcoin2/src/secp256k1/secp.zip"
-  ignore_errors: yes
+  ignore_errors: no
 
 - name: unzip secp.zip 
   shell: unzip ~/navcoin2/src/secp256k1/secp.zip ~/navcoin2/src/secp256k1/
-  ignore_errors: yes
+  ignore_errors: no
 
 
 - name: sudo chmod 777 ~/navcoin2/src/secp256k1/* 
   shell: sudo chmod 777 ~/navcoin2/src/secp256k1/*
-  ignore_errors: yes
+  ignore_errors: no
 
 - name: ./autogen.sh
   shell: ./autogen.sh
           chdir=~/navcoin2/src/secp256k1/
-  ignore_errors: yes
+  ignore_errors: no
 
 - name: ./configure --enable-module-recovery
   shell: ./configure --enable-module-recovery
          chdir=~/navcoin2/src/secp256k1/
-  ignore_errors: yes
+  ignore_errors: no
 
 - name: make
   shell: make
          chdir=~/navcoin2/src/secp256k1/
-  ignore_errors: yes
+  ignore_errors: no
 
 - name: make -f makefile.unix -j2
   shell: make -f makefile.unix -j2
          chdir=~/navcoin2/src
-  ignore_errors: yes
+  ignore_errors: no
