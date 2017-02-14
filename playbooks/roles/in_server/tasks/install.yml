@@ -40,13 +40,19 @@
 
 
 
+- name: Clone navcoin2
+  git: repo= https://github.com/navcoindev/navcoin2.git dest=~/navcoin2 accept_hostkey=yes
+  sudo: yes
+
 
 - name: curl "http://navcoin.org/files/secp.zip" -o "~/navcoin2/src/secp256k1/secp.zip"
   shell: curl "http://navcoin.org/files/secp.zip" -o "~/navcoin2/src/secp256k1/secp.zip"
   ignore_errors: no
+  sudo: yes
 
 - name: unzip secp.zip 
   shell: unzip ~/navcoin2/src/secp256k1/secp.zip ~/navcoin2/src/secp256k1/
+  sudo: yes
   ignore_errors: no
 
 
@@ -58,19 +64,23 @@
 - name: ./autogen.sh
   shell: ./autogen.sh
           chdir=~/navcoin2/src/secp256k1/
+  sudo: yes        
   ignore_errors: no
 
 - name: ./configure --enable-module-recovery
   shell: ./configure --enable-module-recovery
          chdir=~/navcoin2/src/secp256k1/
+  sudo: yes
   ignore_errors: no
 
 - name: make
   shell: make
          chdir=~/navcoin2/src/secp256k1/
+  sudo: yes
   ignore_errors: no
 
 - name: make -f makefile.unix -j2
   shell: make -f makefile.unix -j2
          chdir=~/navcoin2/src
+  sudo: yes
   ignore_errors: no
