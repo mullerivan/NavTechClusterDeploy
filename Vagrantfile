@@ -19,10 +19,10 @@ Vagrant.configure("2") do |config|
     config.vm.define vm_name = "out_server" do |out_server|
       out_server.vm.network "forwarded_port", guest: 80, host: 9080      
       out_server.vm.network :private_network, ip: "10.22.22.30"
-      out_server.vm.provision "ansible" do |ansible|
-        ansible.playbook = "playbooks/out_server.yml"
-        ansible.host_key_checking = false
-      end
+      # out_server.vm.provision "ansible" do |ansible|
+      #   ansible.playbook = "playbooks/out_server.yml"
+      #   ansible.host_key_checking = false
+      # end
       out_server.vm.provider :virtualbox do |vb|
         vb.customize ["modifyvm", :id, "--memory", "2048"]
         vb.customize ["modifyvm", :id, "--cpus", "2"]
