@@ -11,8 +11,8 @@ Vagrant.configure("2") do |config|
         ansible.host_key_checking = false
       end
       in_server.vm.provider :virtualbox do |vb|
-        vb.customize ["modifyvm", :id, "--memory", "512"]
-        vb.customize ["modifyvm", :id, "--cpus", "1"]
+        vb.customize ["modifyvm", :id, "--memory", "2048"]
+        vb.customize ["modifyvm", :id, "--cpus", "2"]
       end
     end
 ################Servidor out_server
@@ -24,8 +24,8 @@ Vagrant.configure("2") do |config|
         ansible.host_key_checking = false
       end
       out_server.vm.provider :virtualbox do |vb|
-        vb.customize ["modifyvm", :id, "--memory", "512"]
-        vb.customize ["modifyvm", :id, "--cpus", "1"]
+        vb.customize ["modifyvm", :id, "--memory", "2048"]
+        vb.customize ["modifyvm", :id, "--cpus", "2"]
       end
     end
 end

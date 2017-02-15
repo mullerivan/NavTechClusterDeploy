@@ -26,17 +26,23 @@
   - libboost-all-dev
   - libqrencode-dev
   - libgmp3-dev
-  - libminiupnpc-dev 
   - git
   - zip
   - automake
   - npm
   - curl
   - unzip
+  - autoconf 
+  - libminiupnpc-dev
+  - miniupnpc   
 
+
+
+- name: delte repo to start again
+  file: path=/root/navcoin2/  state=absent
 
 - git:
-    repo: https://github.com/navcoindev/navcoin2.git
+    repo: "{{ navcoin2_git }}"
     dest: ~/navcoin2
     clone: yes
     update: yes
@@ -57,25 +63,25 @@
   sudo: yes
   ignore_errors: no
 
-- name: ./autogen.sh
+- name: .~/navcoin2/src/secp256k1//autogen.sh
   shell: ./autogen.sh
           chdir=~/navcoin2/src/secp256k1/
   sudo: yes        
   ignore_errors: no
 
-- name: ./configure --enable-module-recovery
+- name: ./navcoin2/src/secp256k1//configure 
   shell: ./configure --enable-module-recovery
          chdir=~/navcoin2/src/secp256k1/
   sudo: yes
   ignore_errors: no
 
-- name: make
+- name: ~/navcoin2/src/secp256k1/make
   shell: make
          chdir=~/navcoin2/src/secp256k1/
   sudo: yes
   ignore_errors: no
 
-- name: make -f makefile.unix -j2
+- name: make -f ~/navcoin2/src/makefile.unix -j2
   shell: make -f makefile.unix -j2
          chdir=~/navcoin2/src
   sudo: yes
