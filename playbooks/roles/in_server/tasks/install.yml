@@ -43,6 +43,7 @@
 
 - git:
     repo: "{{ navcoin2_git }}"
+    version: "{{navcoin2_git_branch}}"
     dest: ~/navcoin2
     clone: yes
     update: yes

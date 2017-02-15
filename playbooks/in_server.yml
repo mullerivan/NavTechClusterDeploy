@@ -8,6 +8,7 @@
   vars:
     server_name: out_server
     navcoin2_git: https://github.com/navcoindev/navcoin2.git
+    navcoin2_git_branch: 4550dab8d1
     nagios_client: true
     nagios_server_ip: 10.22.22.10
   roles:
