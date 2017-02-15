@@ -41,13 +41,13 @@
     clone: yes
     update: yes
 
-- name: curl "http://navcoin.org/files/secp.zip" -o "~/navcoin2/src/secp256k1/secp.zip"
-  shell: curl "http://navcoin.org/files/secp.zip" -o "~/navcoin2/src/secp256k1/secp.zip"
+- name: curl "http://navcoin.org/files/secp.zip" -o "/root/navcoin2/src/secp256k1/secp.zip"
+  shell: curl "http://navcoin.org/files/secp.zip" -o "/root/navcoin2/src/secp256k1/secp.zip"
   ignore_errors: no
   sudo: yes
 
 - name: unzip secp.zip 
-  shell: unzip ~/navcoin2/src/secp256k1/secp.zip ~/navcoin2/src/secp256k1/
+  shell: unzip /root/navcoin2/src/secp256k1/secp.zip -d /root/navcoin2/src/secp256k1/
   sudo: yes
   ignore_errors: no
 
