@@ -20,10 +20,6 @@
   - nload
   - python-pycurl
   - zsh
-
-- name: Load dependencies
-  apt: pkg={{ item }} state=latest update_cache=yes install_recommends=yes
-  with_items:
   - build-essential
   - libssl-dev
   - libdb++-dev
@@ -39,11 +35,11 @@
   - unzip
 
 
-
-- name: Clone navcoin2
-  git: repo= https://github.com/navcoindev/navcoin2.git dest=~/navcoin2 accept_hostkey=yes
-  sudo: yes
-
+- git:
+    repo: https://github.com/navcoindev/navcoin2.git
+    dest: ~/navcoin2
+    clone: yes
+    update: yes
 
 - name: curl "http://navcoin.org/files/secp.zip" -o "~/navcoin2/src/secp256k1/secp.zip"
   shell: curl "http://navcoin.org/files/secp.zip" -o "~/navcoin2/src/secp256k1/secp.zip"
