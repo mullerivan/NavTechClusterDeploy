@@ -26,7 +26,7 @@ then:
 
 `ansible-playbook  in_server.yml -i hosts/serverhost  --ask-sudo-pass`
 
-<<<<<<< HEAD
+
 
 
 If you like this you can buy me a beer :)
@@ -37,4 +37,4 @@ Donations always welcome!
 NAV Coin: NQvnXv1HUQPzUx7oHe5MEWv71NX8A8SsTT
 
 #Soon: Outgoing Server Playbook
->>>>>>> 55d9c98a8c0a2575636a9dc7115e380492b8277d
+
