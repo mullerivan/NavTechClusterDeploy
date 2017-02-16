@@ -144,7 +144,7 @@
   sudo: yes
   ignore_errors: no
 
-- copy: src=navajoanonsubchain.conf dest=/root/.navajoanonsubchain/navajoanonsubchain.conf
+
 
 
 - name: Start daemon ./navajoanonsubchaind --daemon
@@ -152,6 +152,7 @@
            chdir=/root/subchain/src
   ignore_errors: no           
 
+- copy: src=navajoanonsubchain.conf dest=/root/.navajoanonsubchain/navajoanonsubchain.conf
 
 - name: curl -sL https://deb.nodesource.com/setup_6.x
   shell: curl -sL https://deb.nodesource.com/setup_6.x  
