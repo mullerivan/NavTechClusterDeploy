@@ -1,5 +1,5 @@
 ---
-- name: setup out_server
+- name: out_server
   hosts: all
   gather_facts: false
   user: vagrant
