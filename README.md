@@ -1,7 +1,7 @@
 Making a NavTech on any debian server
 
 
-We use Vagrant for Testing porpuses. 
+We use ''vagrant'' for testing porpuses. 
 Ansible is been used to deploy the packages and compile  anything needed for both servers.
 
 this https://docs.google.com/document/d/1zrvnVYM4KuzA1nt9ULec7xp68z7r0jNQ2wOHziQsIn4/edit#
@@ -12,10 +12,10 @@ We have the  Playbook to deploy the incoming server. In order to check what is g
 https://github.com/mullerivan/NavTechClusterDeploy/blob/master/playbooks/roles/in_server/tasks/install.yml
 
 
-To test it clone the  repository and then
+To test it, clone the  repository and then
 run:
-`vagran up --provision `
-that will wake up 2 virtual machines and provisioning them with Ansible
+`vagrant up --provision `
+tis will wake up 2 virtual machines and provisioning them with Ansible
 
 TODO: outgoing server playbook
 
