@@ -4,7 +4,8 @@ Making a NavTech on any debian server
 We use ''vagrant'' for testing porpuses. 
 Ansible is been used to deploy the packages and compile  anything needed for both servers.
 
-this https://docs.google.com/document/d/1zrvnVYM4KuzA1nt9ULec7xp68z7r0jNQ2wOHziQsIn4/edit#
+
+Use this guide as reference:  https://docs.google.com/document/d/1zrvnVYM4KuzA1nt9ULec7xp68z7r0jNQ2wOHziQsIn4/edit#
 
 
 We have the  Playbook to deploy the incoming server. In order to check what is going on on your server check this file.
