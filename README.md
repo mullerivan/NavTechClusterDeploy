@@ -30,10 +30,8 @@ then:
 
 
 If you like this you can buy me a beer :)
-navcoin:NQvnXv1HUQPzUx7oHe5MEWv71NX8A8SsTT
-=======
 Donations always welcome!
-
+=======
 NAV Coin: NQvnXv1HUQPzUx7oHe5MEWv71NX8A8SsTT
 
 #Soon: Outgoing Server Playbook
