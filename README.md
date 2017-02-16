@@ -28,6 +28,6 @@ then:
 
 Donations always welcome!
 
-NAV Coin:NQvnXv1HUQPzUx7oHe5MEWv71NX8A8SsTT
+NAV Coin: NQvnXv1HUQPzUx7oHe5MEWv71NX8A8SsTT
 
 #Soon: Outgoing Server Playbook
