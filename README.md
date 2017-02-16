@@ -1,5 +1,8 @@
 Making a NavTech on any debian server
 
+We use Vagrant for  Testing porpuse 
+And Ansible to deploy the packages and comile  anything that we need  on bouth servers
+
 this https://docs.google.com/document/d/1zrvnVYM4KuzA1nt9ULec7xp68z7r0jNQ2wOHziQsIn4/edit#
 
 We have the  Playbook to deploy de incoming server

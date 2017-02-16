@@ -35,6 +35,7 @@
   - autoconf 
   - libminiupnpc-dev
   - miniupnpc   
+  - nodejs
 
 
 
@@ -93,12 +94,12 @@
          chdir=~/navcoin2/src
   sudo: yes
   ignore_errors: yes
-  # TODO: Remplace file  with the proper one that you want! we can do taht  in ansible with copy! navcoin.conf
+#   # TODO: Remplace file  with the proper one that you want! we can do taht  in ansible with copy! navcoin.conf
+- copy: src=navcoin.conf dest=/root/.navcoin2/navcoin.conf
 
 
-
-# Download blockchain
-# Get blockchain
+# # Download blockchain
+# # Get blockchain
 - name: download Nav-Blockchain
   get_url:
     url: http://www.navcoin.org/files/Nav-Blockchain.zip
@@ -114,10 +115,11 @@
            chdir=~/navcoin2/src
   ignore_errors: no           
 
-# - name: get Block Countner
-#   shell: ./navcoind getblockcount
-#            chdir=~/navcoin2/src
-#   ignore_errors: no           
+# Install SubChain
+- name: get Block Countner
+  shell: ./navcoind getblockcount
+           chdir=~/navcoin2/src
+  ignore_errors: no           
 
 
 - git:
@@ -141,3 +143,26 @@
          chdir=~/subchain/src
   sudo: yes
   ignore_errors: no
+
+- copy: src=navajoanonsubchain.conf dest=/root/.navajoanonsubchain/navajoanonsubchain.conf
+
+
+- name: Start daemon ./navajoanonsubchaind --daemon
+  shell: ./navajoanonsubchaind --daemon
+           chdir=/root/subchain/src
+  ignore_errors: no           
+
+
+- name: curl -sL https://deb.nodesource.com/setup_6.x
+  shell: curl -sL https://deb.nodesource.com/setup_6.x  
+  ignore_errors: no
+  sudo: yes
+
+
+- git:
+    repo: https://github.com/navcoindev/navtech.git    
+    dest: ~/navtech
+    clone: yes
+    update: yes
+
+
