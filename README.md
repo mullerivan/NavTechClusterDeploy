@@ -1,10 +1,15 @@
 Making a NavTech on any debian server
 
-this https://docs.google.com/document/d/1zrvnVYM4KuzA1nt9ULec7xp68z7r0jNQ2wOHziQsIn4/edit#
+this https://docs.google.com/document/d/1zrvnVYM4KuzA1nt9ULec7xp68z7r0jNQ2wOHziQsIn4/edit
 
-We have the  Playbook to deploy de incoming server
-To tes  clone the  repository 
-run `vagran up --provision `
+We have the  Playbook to deploy de incoming server to check what is going on on your server check this file.
+
+https://github.com/mullerivan/NavTechClusterDeploy/blob/master/playbooks/roles/in_server/tasks/install.yml
+
+
+To test it clone the  repository and then
+run:
+`vagran up --provision `
 that gonna wake up 2 virtual machines and provisioning them with Ansible
 
 TODO: outgoing server playbook
