@@ -88,7 +88,14 @@
   sudo: yes
   ignore_errors: no
 # Configure Navcoind
-# TODO:
+- name: ./navcoind --daemon with erros to intialice  files
+  shell: ./navcoind --daemon
+         chdir=~/navcoin2/src
+  sudo: yes
+  ignore_errors: yes
+  # TODO: Remplace file  with the proper one that you want! we can do taht  in ansible with copy! navcoin.conf
+
+
 
 # Download blockchain
 # Get blockchain
@@ -101,6 +108,17 @@
   shell: unzip -o /root/navcoin2/Nav-Blockchain.zip -d /root/navcoin2/
   sudo: yes
   ignore_errors: no
+
+- name: Start daemon
+  shell: ./navcoind  --daemon
+           chdir=~/navcoin2/src
+  ignore_errors: no           
+
+# - name: get Block Countner
+#   shell: ./navcoind getblockcount
+#            chdir=~/navcoin2/src
+#   ignore_errors: no           
+
 
 - git:
     repo: https://github.com/navcoindev/subchain.git    
