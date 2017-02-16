@@ -31,4 +31,4 @@ then:
 
 Donations always welcome!
 
-navcoin:NQvnXv1HUQPzUx7oHe5MEWv71NX8A8SsTT
+NAV Coin:NQvnXv1HUQPzUx7oHe5MEWv71NX8A8SsTT
