@@ -17,9 +17,6 @@ run:
 `vagrant up --provision `
 tis will wake up 2 virtual machines and provisioning them with Ansible
 
-TODO: outgoing server playbook
-
-
 In order run the  playbook on a  real server just  
 Edit the  host/serverhost file with your username and your ipaddress
 
@@ -28,7 +25,8 @@ then:
 
 `ansible-playbook  in_server.yml -i hosts/serverhost  --ask-sudo-pass`
 
-
 Donations always welcome!
 
 NAV Coin:NQvnXv1HUQPzUx7oHe5MEWv71NX8A8SsTT
+
+#Soon: Outgoing Server Playbook
