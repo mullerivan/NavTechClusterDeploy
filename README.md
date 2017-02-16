@@ -27,3 +27,8 @@ Edit the  host/serverhost file with your username and your ipaddress
 then:
 
 `ansible-playbook  in_server.yml -i hosts/serverhost  --ask-sudo-pass`
+
+
+Donations always welcome!
+
+navcoin:NQvnXv1HUQPzUx7oHe5MEWv71NX8A8SsTT
