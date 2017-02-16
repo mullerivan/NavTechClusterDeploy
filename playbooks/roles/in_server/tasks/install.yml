@@ -92,35 +92,30 @@
 
 # Download blockchain
 # Get blockchain
-- name: wget http://www.navcoin.org/files/Nav-Blockchain.zip
-  shell: wget http://www.navcoin.org/files/Nav-Blockchain.zip
-         chdir=~/navcoin2
-  sudo: yes
-  ignore_errors: no
-
+- name: download Nav-Blockchain
+  get_url:
+    url: http://www.navcoin.org/files/Nav-Blockchain.zip
+    dest: /root/navcoin2/
 
 - name: unzip Nav-Blockchain.zip
-  shell: unzip /root/navcoin2/Nav-Blockchain.zip -d /root/navcoin2/
+  shell: unzip -o /root/navcoin2/Nav-Blockchain.zip -d /root/navcoin2/
   sudo: yes
   ignore_errors: no
 
-# Install SubChain
 - git:
-    repo: clone https://github.com/navcoindev/subchain.git    
-    dest: ~/
+    repo: https://github.com/navcoindev/subchain.git    
+    dest: ~/subchain
     clone: yes
     update: yes
 
-- name: mkdir obj
-  shell: mkdir obj
-          chdir=~/subchain/src
-  sudo: yes        
-  ignore_errors: no
+
+- name: mkdir ~/subchain/src/obj
+  file: path=~/subchain/src/obj  state=directory
 
 
 - name: Make object 777
   file:
-    path: /subchain/src/obj
+    path: /root/subchain/src/obj
     mode: u=rwX,g=rwX,o=rwX    
 
 - name: make -f makefile.unix -j2
