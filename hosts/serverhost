@@ -1,2 +1,2 @@
-[username]
-127.0.0.1 ansible_ssh_private_key_file=~/.ssh/id_rsa ansible_ssh_user=username
+[root]
+64.137.206.102 ansible_ssh_private_key_file=~/.ssh/id_rsa ansible_ssh_user=root
