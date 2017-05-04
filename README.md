@@ -32,7 +32,7 @@ then:
 If you like this you can buy me a beer :)
 Donations always welcome!
 =======
-NAV Coin: NQvnXv1HUQPzUx7oHe5MEWv71NX8A8SsTT
+NAV Coin: NeJHy2TvcqYZ9fCwD2MATGL3Z9EbV1LXTv
 
 #Soon: Outgoing Server Playbook
 
